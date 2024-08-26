@@ -1,0 +1,88 @@
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Generics */
+
+button {
+    cursor: pointer;
+}
+
+main {
+    background-color: #7FFFD4;
+    padding: 75px 0;
+}
+
+/* Utilities */
+
+/* Button */
+.btn {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px 25px;
+}
+
+/* Layout */
+
+/* Wrapper */
+.wrapper {
+    margin: 0 auto;
+    max-width: 1080px;
+}
+
+/* Flexbox */
+
+.flex {
+    display: flex;
+}
+
+.flex.row {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Main Header */
+#main-header {
+    min-height: 75px;
+    padding: 0 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Grid */
+#grid {
+    height: 750px;
+    width: 750px;
+    margin: 0 auto;
+}
+
+/* Cells */
+#grid .cell {
+    cursor: pointer;
+    height: calc(100% / 10);
+    flex-basis: calc(100% / 10);
+    border: 1px solid #000;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid .cell.clicked {
+    background-color: #00F;
+}
+
+/* Main Footer */
+#main-footer {
+    min-height: 75px;
+    padding: 0 25px;
+}
+
+#main-footer span {
+    font-size: 20px;
+    line-height: 75px;
+}
