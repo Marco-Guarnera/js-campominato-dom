@@ -57,6 +57,8 @@ main {
     height: 750px;
     width: 750px;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Cells */
@@ -73,6 +75,7 @@ main {
 }
 
 #grid .cell.clicked {
+    cursor: not-allowed;
     background-color: #00F;
 }
 
