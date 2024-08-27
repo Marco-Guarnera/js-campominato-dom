@@ -15,6 +15,7 @@ const rows = 10;
 const cols = 10;
 const totalCells = rows * cols;
 let score = 0;
+const totalRandomNumbers = 16;
 
 // Funzioni
 
@@ -24,6 +25,16 @@ function createNode(element, className, content) {
     node.classList.add(className);
     node.append(content);
     return node;
+}
+
+// Funzione per generare tot numeri casuali
+function generateRandomNumbers(max, totalRandomNumbers) {
+    const randomNumbers = [];
+    while (randomNumbers.length < totalRandomNumbers) {
+        const randomNumber = Math.floor(Math.random() * max) + 1;
+        if (!randomNumbers.includes(randomNumber)) randomNumbers.push(randomNumber);
+    }
+    return randomNumbers;
 }
 
 // Funzione per iniziare a giocare
@@ -42,7 +53,7 @@ function startGame() {
         cell.addEventListener("click", function () {
             // Se la cella contiene la classe "clicked", esci
             if (cell.classList.contains("clicked")) return;
-            // Aggiungo la classe "clicked"
+            // Aggiungo la classe "clicked" alla cella
             cell.classList.add("clicked");
             // Incremento lo score
             scoreElement.innerText = `Score: ${++score}`;
@@ -52,6 +63,9 @@ function startGame() {
         // Aggiungo la cella nel DOM
         gridElement.appendChild(cell);
     }
+    // Utilizzo la funzione per generare tot numeri casuali
+    const randomNumbers = generateRandomNumbers(totalCells, totalRandomNumbers);
+    console.log(randomNumbers);
 }
 
 // Fase di gestione eventi
