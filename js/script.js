@@ -53,12 +53,21 @@ function startGame() {
         cell.addEventListener("click", function () {
             // Se la cella contiene la classe "clicked", esci
             if (cell.classList.contains("clicked")) return;
-            // Aggiungo la classe "clicked" alla cella
-            cell.classList.add("clicked");
-            // Incremento lo score
-            scoreElement.innerText = `Score: ${++score}`;
             // Stampo il numero della cella in console
             console.log(cell.innerText);
+            // Verifico se il numero della cella è incluso nella lista dei numeri casuali
+            if (randomNumbers.includes(i + 1)) {
+                // Aggiungo la classe "bomb" alla cella
+                cell.classList.add("bomb");
+                // Stampo il risultato in console
+                const result = `La partita è terminata. Hai totalizzato ${score} punti.`;
+                console.log(result);
+            } else {
+                // Aggiungo la classe "clicked" alla cella
+                cell.classList.add("clicked");
+                // Incremento lo score
+                scoreElement.innerText = `Score: ${++score}`;
+            }
         });
         // Aggiungo la cella nel DOM
         gridElement.appendChild(cell);

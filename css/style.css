@@ -79,6 +79,10 @@ main {
     background-color: #00F;
 }
 
+#grid .cell.bomb {
+    background-color: #F00;
+}
+
 /* Main Footer */
 #main-footer {
     min-height: 75px;
